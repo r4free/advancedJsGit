@@ -9,11 +9,13 @@
     "build": "./node_modules/.bin/webpack --colors --progress --mode=development npm run server",
     "watch": "npm run build -- --watch",
     "server": "./node_modules/.bin/webpack-dev-server --inline --open --hot",
-    "lint":"./node_modules/.bin/eslint app.js"
+    "lint": "./node_modules/.bin/eslint app.js",
+    "precommit": "npm run lint",
+    "prepush": "npm test"
   },
   "husky": {
-   "hooks": {
-   "pre-commit": "npm run lint"
+    "hooks": {
+      "pre-commit": "npm run lint"
     }
   },
   "keywords": [],
